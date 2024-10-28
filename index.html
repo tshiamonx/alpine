@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Alpine Plugins -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/sort@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <title>Alpine</title>
+  </head>
+  <body>
+    <h1 x-data="{ message: 'I ❤️ ME.' }" x-text="message"></h1>
+    <div x-data="{ count: 0 }">
+      <button x-on:click="count=(count+1)+2">+</button>
+      <button x-on:click="count=(count-1)+2">-</button>
+      <span x-text="count"></span>
+    </div>
+    <div x-data="{handdle: (item.position) => {}}">
+      <ul x-sort="handle">
+        <li x-sort:item="1">swap</li>
+        <li x-sort:item="2">swapper</li>
+        <li x-sort:item="3">swappest</li>
+      </ul>
+    </div>
+    <style>
+      ul {
+        font-size: 2rem;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+    </style>
+  </body>
+</html>
